@@ -7,9 +7,9 @@
   <name>Archetype - Sprint_7</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <!-- версия Aspectj -->
+
     <aspectj.version>1.9.7</aspectj.version>
-    <!-- версия Allure -->
+
     <allure.version>2.24.0</allure.version>
   </properties>
   <dependencies>
@@ -55,6 +55,11 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.12.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.12.5</version>
     </dependency>
@@ -63,18 +68,12 @@
       <artifactId>jackson-annotations</artifactId>
       <version>2.12.5</version>
     </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>2.12.5</version>
-    </dependency>
   </dependencies>
 
   <build>
     <plugins>
       <plugin>
-        <!-- настройка плагина maven-surefire-plugin -->
-        <groupId>org.apache.maven.plugins</groupId>
+            <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.2</version>
         <configuration>
@@ -90,8 +89,7 @@
           </properties>
           <systemProperties>
             <property>
-              <!-- папка, в которую будут генерироваться отчёты Allure -->
-              <name>allure.results.directory</name>
+                   <name>allure.results.directory</name>
               <value>${project.build.directory}/allure-results</value>
             </property>
           </systemProperties>
@@ -104,8 +102,7 @@
           </dependency>
         </dependencies>
       </plugin>
-      <!-- подключение плагина allure-maven для вызова функций Allure с помощью Maven -->
-      <plugin>
+           <plugin>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-maven</artifactId>
         <version>2.10.0</version>
